@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macro Gym — Gizlilik Politikası</title>
+<meta name="description" content="Macro Gym antrenman ve beslenme takip uygulamasının gizlilik politikası: hangi veriler toplanıyor, nereye gidiyor ve nasıl silinir.">
+<link rel="icon" href="/macro-gym-site/logo.png">
+<link rel="stylesheet" href="/macro-gym-site/stil.css">
+<link rel="alternate" hreflang="en" href="https://ataknunal.github.io/macro-gym-site/privacy/">
+</head>
+<body>
+<div class="sarmal">
+
+<header class="ust">
+  <img src="/macro-gym-site/logo.png" alt="Macro Gym logosu">
+  <div>
+    <div class="marka">MACRO GYM</div>
+    <div class="alt">Antrenman &amp; Beslenme Takibi</div>
+  </div>
+  <a class="dil" href="/macro-gym-site/privacy/" hreflang="en" lang="en">English</a>
+</header>
+
+<h1>Gizlilik Politikası</h1>
+<div class="tarih">Son güncelleme: 4 Ekim 2026</div>
+
+<div class="kart">
+  <div class="baslik">Özet</div>
+  <p>Macro Gym (eski adı Volüm) yerel-öncelikli çalışır: verilerinin asıl kopyası senin telefonunda durur.
+  Temel takip özellikleri hesapsız çalışır. Besin arama ve barkod sorguları ürün veri
+  hizmetlerine bağlanır; fotoğraf taraması ve Plus satın alma için giriş gerekir.
+  Veriler <strong>satılmaz</strong>, reklam amacıyla kullanılmaz;
+  uygulamada reklam ağı veya reklam amacıyla takip SDK'sı yoktur.
+  Uygulama yalnızca <strong>bir hata oluştuğunda</strong> isimsiz bir hata raporu
+  gönderir (bkz. 3.4); bunun dışında davranışın izlenmez.</p>
+</div>
+
+<h2>1. Kim veri topluyor</h2>
+<p>Macro Gym uygulamasının veri sorumlusu: <strong>Atakan Ünal</strong> (şahıs geliştirici).<br>
+İletişim: <a href="mailto:volumsport@gmail.com">volumsport@gmail.com</a></p>
+
+<h2>2. Temel yaklaşım</h2>
+<p>Verilerinin asıl kopyası kendi telefonundadır. Antrenman ve beslenme takibi misafir
+modunda çalışır. Besin arama ve barkod sorguları dış ürün veri hizmetlerini kullanır.
+Fotoğraf taraması ve abonelik satın alma hesapla giriş gerektirir.</p>
+<p>Hesap açtığında veriler hesap yönetimi ve yedekleme için buluta (Google Firebase)
+yazılır. Hesap kimliğin fotoğraf tarama hakkını ve üyelik erişimini doğrulamak için
+de kullanılır.</p>
+
+<h2>3. Toplanan veriler</h2>
+
+<h3>3.1 Hesap bilgileri</h3>
+<ul>
+  <li>Giriş için e-posta adresin ve şifren. Şifre kimlik bilgilerini Google Firebase
+      Authentication yönetir; Macro Gym şifrenin ayrı bir kopyasını saklamaz.</li>
+  <li>Görünen adın.</li>
+</ul>
+
+<h3>3.2 Sağlık ve fitness verileri</h3>
+<ul>
+  <li>Boy, kilo, doğum yılı, cinsiyet, hedef, aktivite ve deneyim seviyesi</li>
+  <li>Vücut ölçüleri (bel, göğüs, kol vb.)</li>
+  <li>Antrenman kayıtların: hareketler, setler, ağırlıklar, tekrarlar, süreler</li>
+  <li>Beslenme kayıtların: yenen besinler, kalori, makro besinler, gıda harcaması</li>
+  <li>Su tüketimi ve antrenman serisi (streak) bilgisi</li>
+</ul>
+
+<h3>3.3 Fotoğraflar</h3>
+<ul>
+  <li><strong>Ölçüm fotoğrafları:</strong> Telefonundan çıkmaz. Uygulama yalnızca
+      fotoğrafın cihazındaki dosya yolunu saklar, görüntünün kendisini hiçbir yere
+      yüklemez.</li>
+  <li><strong>Besin fotoğrafları:</strong> “Fotoğraftan tara” özelliğini kullanırsan
+      çekilen fotoğraf, içindeki yiyeceğin tanınması için Google'ın Gemini servisine
+      gönderilir (bkz. bölüm 4). Bu özelliği hiç kullanmazsan böyle bir gönderim
+      olmaz. Fotoğraf, telefonunda küçültüldükten sonra önce bizim
+      <strong>Cloudflare</strong> üzerinde çalışan aracı sunucumuza, oradan Google'a
+      iletilir; aracı sunucu fotoğrafı <strong>saklamaz</strong>, yalnızca iletir.
+      <strong>Ücretli Gemini API</strong> kullanıyoruz. Google'ın ücretli hizmet
+      koşullarına göre istemler, fotoğraflar ve yanıtlar <strong>ürün geliştirmek
+      veya modellerini eğitmek için kullanılmaz</strong>. Google bunları güvenlik,
+      kötüye kullanımı önleme ve yasal gereklilikler için geçici olarak tutabilir.
+      Fotoğrafın yalnızca yemeği içermesine dikkat et.
+      <br>Uygulama ilk taramadan önce fotoğrafın Google Gemini'ye gideceğini söyleyip
+      <strong>açıkça izin ister</strong>; izin vermezsen hiçbir fotoğraf gönderilmez.
+      İzni istediğin an <strong>Profil → Fotoğraf tarama izni</strong> anahtarından
+      geri alabilirsin.
+      <br>Bu özellik <strong>hesap açmayı gerektirir</strong>: aracı sunucu, kimin ne
+      kadar kullandığını sınırlayabilmek için oturum bilgini doğruluyor. Misafir
+      modunda kullanılamaz.</li>
+</ul>
+
+<h3>3.4 Hata raporları</h3>
+<p>Uygulamada beklenmedik bir hata çıktığında, hatayı düzeltebilmemiz için
+teknik bir rapor Sentry servisine gönderilir. Rapor <strong>yalnızca hata
+anında</strong> oluşur; uygulamayı normal kullanırken hiçbir şey gönderilmez.</p>
+<p><strong>Raporun içinde şunlar var:</strong></p>
+<ul>
+  <li>Hatanın mesajı ve teknik yığın izi (kodun hangi satırında kırıldığı)</li>
+  <li>Cihaz modeli, işletim sistemi sürümü ve uygulama sürümü</li>
+</ul>
+<p><strong>Raporun içinde şunlar YOKTUR:</strong></p>
+<ul>
+  <li>Adın, e-postan ya da hesap kimliğin — rapor sana
+      bağlanamaz</li>
+  <li>IP adresin</li>
+  <li>Kilo, ölçü, antrenman, öğün ve harcama verilerinin hiçbiri</li>
+  <li>Ekran görüntüsü ya da ekran kaydı — bu özellikler kapalıdır</li>
+  <li>Hangi ekranları gezdiğin, ne zaman ve kaç kez uygulamayı açtığın</li>
+</ul>
+<p>Bu, bir analitik ya da kullanıcı takip sistemi değildir: kaç kişi olduğumuzu,
+kimin ne yaptığını ya da uygulamanın ne sıklıkla açıldığını ölçmüyoruz.
+Toplanan tek şey, bozulan bir şeyi tamir etmeye yetecek kadar teknik bilgi.</p>
+
+<h2>4. Verilerin paylaşıldığı üçüncü taraflar</h2>
+<div class="tablo-kutu">
+<table>
+  <thead>
+    <tr><th>Servis</th><th>Ne gidiyor</th><th>Neden</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google Firebase<br>(Authentication, Firestore)</td>
+      <td>Hesap bilgilerin ve yukarıdaki tüm kayıtların</td>
+      <td>Hesap yönetimi ve bulut yedeği</td>
+    </tr>
+    <tr>
+      <td>Cloudflare<br>(aracı sunucu)</td>
+      <td>“Fotoğraftan tara” ile çektiğin besin fotoğrafı ve hesap kimliğin,
+          isteği iletirken. Bütçe özelliği açıksa uygulama ayrıca en fazla günde
+          iki kez güncel besin fiyatlarını buradan indirir; bu istekte senden
+          hiçbir bilgi gönderilmez.</td>
+      <td>Fotoğrafı Google'a iletmek, günlük kullanım hakkını saymak ve bütçe
+          planı için güncel market fiyatlarını dağıtmak. Fotoğraf saklanmaz;
+          hesap kimliği, günlük kullanım, ilk tarama zamanı, günlük kötüye kullanım
+          kontrolü için ağ adresi ve doğrulanmış üyelik bitişi tutulur.</td>
+    </tr>
+    <tr>
+      <td>Google Gemini API</td>
+      <td>Yalnızca “fotoğraftan tara” ile çektiğin besin fotoğrafı</td>
+      <td>Google'ın ücretli hizmet koşulları kapsamında yiyeceği tanımak. İçerik
+          ürün geliştirme veya model eğitimi için kullanılmaz; sınırlı güvenlik
+          ve kötüye kullanımı önleme saklaması uygulanabilir.</td>
+    </tr>
+    <tr>
+      <td>RevenueCat, Apple App Store ve Google Play</td>
+      <td>Üyelik doğrulaması ve mağaza işlemleri için Macro Gym hesap kimliğin,
+          ürün/işlem bilgisi, satın alma ve üyelik durumu; sağlayıcının çalışması
+          için gereken uygulama/cihaz bilgileri. Kart bilgilerin Macro Gym'e gelmez.</td>
+      <td>Ödemeyi doğrulamak, üyelik hakkını, yenilemeyi, iadeyi ve geri yüklemeyi
+          yönetmek ve abonelik gelirini analiz etmek. Fotoğraf, kilo, antrenman veya öğün kayıtların RevenueCat'e gönderilmez.</td>
+    </tr>
+    <tr>
+      <td>Open Food Facts</td>
+      <td>Yalnızca okuttuğun barkod numarası ve market ürünlerinde aradığın kelimeler</td>
+      <td>Ürünün besin değerlerini getirmek</td>
+    </tr>
+    <tr>
+      <td>Sentry</td>
+      <td>Yalnızca bir hata oluştuğunda: hata mesajı, teknik yığın izi, cihaz
+          modeli, işletim sistemi ve uygulama sürümü. Kimliğin, IP adresin ve
+          fitness verilerin gönderilmez (bkz. 3.4).</td>
+      <td>Uygulamadaki hataları görüp düzeltmek</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="not">
+  <p>Fotoğraflar, izninle ve yalnızca istediğin tarama için Gemini'ye gönderilir.
+  İşleme ve geçici güvenlik saklaması
+  <a href="https://ai.google.dev/gemini-api/terms#paid-services">Google'ın ücretli hizmet koşullarında</a>
+  açıklanır.</p>
+</div>
+
+<h3>4.1 Bu web sitesini ziyaret ettiğinde</h3>
+<p>Herkese açık destek ve politika sitesi GitHub Pages üzerinde barındırılır.
+GitHub, GitHub hesabıyla giriş yapılmayan ziyaretler dahil, güvenlik amacıyla
+ziyaretçinin IP adresini kaydeder. Bu sitede giriş, ödeme formu veya analitik
+betiği yoktur. Ayrıntılar:
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Gizlilik Bildirimi</a>.
+Web sitesi ziyaretleri, mobil uygulamada işlenen verilerden ayrıdır.</p>
+
+<h2>5. Verilerini silme</h2>
+
+<h3>Uygulama içinden</h3>
+<p><strong>Profil → Hesabı Sil</strong> yolunu izle. Bu işlem şunların tamamını kalıcı
+olarak siler:</p>
+<ul>
+  <li>Firebase hesabın (e-posta ve şifren)</li>
+  <li>Buluttaki tüm antrenman, beslenme, ölçüm ve su kayıtların</li>
+  <li>Bu cihazdaki yerel kopyan</li>
+</ul>
+<p>İşlem geri alınamaz ve silinen veri kurtarılamaz.</p>
+
+<p>Yalnızca bu cihazdaki kopyayı silmek, hesabını korumak istersen
+<strong>Profil → Cihazdaki verileri temizle</strong> seçeneğini kullan.</p>
+
+<h3>Uygulamayı silmişsen</h3>
+<p>Uygulamaya erişimin yoksa hesabının e-posta adresiyle bize yaz; hesabın ve tüm
+verilerin 30 gün içinde silinir. Adımlar için:</p>
+<p><a class="dugme" href="/macro-gym-site/tr/hesap-silme/">Hesap Silme Talebi</a></p>
+<p>Hesabını veya uygulamayı silmek App Store/Google Play aboneliğini iptal etmez;
+  aboneliğini ilgili mağaza hesabından ayrıca yönetmelisin. Uygulama Firebase hesabını
+  silmeden önce RevenueCat müşteri kaydının silinmesini ister; RevenueCat bu işlemi
+  sıraya alarak tamamlar. Günlük güvenlik sayaçları ve geçici silme işareti 48 saat
+  içinde temizlenir. Mağazalar ve ödeme sağlayıcıları yasal olarak gereken işlem
+  kayıtlarını saklayabilir. Uygulama dışındaki silme talepleri için destek adresimize yazabilirsin.</p>
+
+<h2>6. Verilerin saklanması</h2>
+<p>Veriler, sen silene kadar saklanır. Uygulamayı telefonundan kaldırman buluttaki
+verini silmez — silmek için yukarıdaki adımları izlemen gerekir.</p>
+
+<h2>7. Çocukların gizliliği</h2>
+<p>Macro Gym 13 yaşın altındaki çocuklara yönelik değildir ve bilerek bu yaş grubundan
+veri toplamaz; kurulumda 13 yaşından küçük bir doğum yılı kabul edilmez.</p>
+
+<h2>8. Sağlık uyarısı</h2>
+<p>Uygulamadaki kalori, makro ve antrenman önerileri genel bilgilendirme amaçlıdır,
+tıbbi tavsiye değildir. Bir sağlık sorunun varsa beslenme ya da antrenman düzenini
+değiştirmeden önce doktoruna danış.</p>
+
+<h2>9. Haklarınız</h2>
+<p>KVKK ve GDPR kapsamında verilerine erişme, düzeltme, silme ve taşıma haklarına
+sahipsin. Verilerinin tamamı uygulama içinde zaten görünür ve düzenlenebilir
+durumda; silme için bölüm 5'e bak. Diğer talepler için
+<a href="mailto:volumsport@gmail.com">volumsport@gmail.com</a> adresine yazabilirsin.</p>
+
+<h2>10. Değişiklikler</h2>
+<p>Bu politika değişirse yukarıdaki “Son güncelleme” tarihi güncellenir ve önemli
+değişiklikler uygulama içinde duyurulur.</p>
+
+<footer>
+  <span>Macro Gym · Atakan Ünal</span>
+  <span><a href="/macro-gym-site/tr/hesap-silme/">Hesap silme</a></span>
+</footer>
+
+</div>
+</body>
+</html>

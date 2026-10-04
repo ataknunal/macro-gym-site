@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macro Gym — Privacy Policy</title>
+<meta name="description" content="Privacy policy of Macro Gym, the workout and nutrition tracker: what data is collected, where it goes and how to delete it.">
+<link rel="icon" href="/macro-gym-site/logo.png">
+<link rel="stylesheet" href="/macro-gym-site/stil.css">
+<link rel="alternate" hreflang="tr" href="https://ataknunal.github.io/macro-gym-site/tr/gizlilik/">
+</head>
+<body>
+<div class="sarmal">
+
+<header class="ust">
+  <img src="/macro-gym-site/logo.png" alt="Macro Gym logo">
+  <div>
+    <div class="marka">MACRO GYM</div>
+    <div class="alt">Workout &amp; Nutrition Tracker</div>
+  </div>
+  <a class="dil" href="/macro-gym-site/tr/gizlilik/" hreflang="tr" lang="tr">Türkçe</a>
+</header>
+
+<h1>Privacy Policy</h1>
+<div class="tarih">Last updated: October 4, 2026</div>
+
+<div class="kart">
+  <div class="baslik">Summary</div>
+  <p>Macro Gym (formerly Volüm) is local-first: the primary copy of your data lives on
+  your phone. Core tracking works without an account. Food search and barcode queries
+  connect to product data services; photo scanning and Plus purchases require sign-in.
+  Your data is <strong>never sold</strong> and never used for
+  advertising; the app contains no ad networks or advertising
+  tracking SDKs. The app only sends an anonymous crash report <strong>when an error
+  occurs</strong> (see 3.4); otherwise your behavior is not tracked.</p>
+</div>
+
+<h2>1. Who collects data</h2>
+<p>The data controller for the Macro Gym app is <strong>Atakan Ünal</strong>
+(individual developer).<br>
+Contact: <a href="mailto:volumsport@gmail.com">volumsport@gmail.com</a></p>
+
+<h2>2. Our approach</h2>
+<p>The primary copy of your data is on your own phone. Workout and nutrition tracking
+work in guest mode. Search and barcode lookups use external product data services.
+Photo scanning and subscription purchases require an account.</p>
+<p>If you create an account, your data is also written to the cloud (Google
+Firebase) for account management and backup. Your account ID is also used to
+verify photo allowances and membership access.</p>
+
+<h2>3. Data we collect</h2>
+
+<h3>3.1 Account information</h3>
+<ul>
+  <li>Your email address and password for sign-in. Google Firebase Authentication
+      manages password credentials; Macro Gym does not keep a separate password copy.</li>
+  <li>Your display name.</li>
+</ul>
+
+<h3>3.2 Health and fitness data</h3>
+<ul>
+  <li>Height, weight, birth year, sex, goal, activity and experience level</li>
+  <li>Body measurements (waist, chest, arms, etc.)</li>
+  <li>Workout logs: exercises, sets, weights, reps, durations</li>
+  <li>Nutrition logs: foods eaten, calories, macronutrients and, in Türkiye, food spending</li>
+  <li>Water intake and workout streak</li>
+</ul>
+
+<h3>3.3 Photos</h3>
+<ul>
+  <li><strong>Progress photos:</strong> never leave your phone. The app only stores the
+      photo's file path on your device and never uploads the image.</li>
+  <li><strong>Meal photos:</strong> if you use “Scan from photo”, the photo is sent to
+      Google's Gemini service to recognize the food in it (see section 4). If you never
+      use this feature, nothing is sent. The photo is resized on your phone, then sent
+      to our relay server running on <strong>Cloudflare</strong>, which forwards it to
+      Google; the relay <strong>does not store</strong> the photo.
+      We use the <strong>paid Gemini API</strong>. Under Google's paid-service terms,
+      prompts, photos and responses are <strong>not used to improve its products
+      or train its models</strong>. Google may temporarily retain them for safety,
+      abuse prevention and legal requirements. Only include the meal in the photo.
+      <br>Before the first scan, the app tells you the photo will go to Google Gemini and
+      <strong>asks for your explicit permission</strong>; without it, no photo is sent.
+      You can withdraw permission at any time with the
+      <strong>Profile → Photo scan permission</strong> switch.
+      <br>This feature <strong>requires an account</strong>: the relay verifies your
+      session so it can limit how much each person uses it. It is not available in
+      guest mode.</li>
+</ul>
+
+<h3>3.4 Crash reports</h3>
+<p>When an unexpected error occurs, a technical report is sent to Sentry so we can fix
+it. A report is created <strong>only when an error happens</strong>; nothing is sent
+during normal use.</p>
+<p><strong>A report contains:</strong></p>
+<ul>
+  <li>The error message and technical stack trace (where in the code it broke)</li>
+  <li>Device model, operating system version and app version</li>
+</ul>
+<p><strong>A report does NOT contain:</strong></p>
+<ul>
+  <li>Your name, email or account ID — the report cannot be linked to you</li>
+  <li>Your IP address</li>
+  <li>Any of your weight, measurement, workout, meal or spending data</li>
+  <li>Screenshots or screen recordings — these features are turned off</li>
+  <li>Which screens you visit, or when and how often you open the app</li>
+</ul>
+<p>This is not an analytics or user tracking system: we don't measure how many of you
+there are, who does what, or how often the app is opened. The only thing collected is
+enough technical detail to fix something that broke.</p>
+
+<h2>4. Third parties that receive data</h2>
+<div class="tablo-kutu">
+<table>
+  <thead>
+    <tr><th>Service</th><th>What is sent</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google Firebase<br>(Authentication, Firestore)</td>
+      <td>Your account information and all of the logs above</td>
+      <td>Account management and cloud backup</td>
+    </tr>
+    <tr>
+      <td>Cloudflare<br>(relay server)</td>
+      <td>The meal photo you take with “Scan from photo” and your account ID, while
+          forwarding the request. If the budget feature is on, the app also downloads
+          current food prices from here at most twice a day; that request contains no
+          information about you.</td>
+      <td>Forwarding the photo to Google, counting your daily usage and distributing
+          current grocery prices for the budget plan. Photos are not stored; only your
+          account ID, daily usage, first scan time, network address for daily abuse
+          checks and verified membership expiry are kept.</td>
+    </tr>
+    <tr>
+      <td>Google Gemini API</td>
+      <td>Only the meal photo you take with “Scan from photo”</td>
+      <td>Recognizing the food under Google's paid-service terms. Submitted content
+          is not used for product improvement or model training; limited safety
+          and abuse-prevention retention may apply.</td>
+    </tr>
+    <tr>
+      <td>RevenueCat, Apple App Store and Google Play</td>
+      <td>For membership verification and store transactions: your Macro Gym account
+          ID, product/transaction information and purchase/membership status, plus
+          app/device information needed to operate the service. Macro Gym does not
+          receive your card details.</td>
+      <td>Verifying payments and managing membership access, renewals, refunds and
+          purchase restoration, and subscription revenue analysis. Photos, weight, workout and meal logs are not sent to RevenueCat.</td>
+    </tr>
+    <tr>
+      <td>Open Food Facts</td>
+      <td>Only the barcode number you scan and the words you search for in grocery
+          products</td>
+      <td>Fetching the product's nutrition facts</td>
+    </tr>
+    <tr>
+      <td>Sentry</td>
+      <td>Only when an error occurs: error message, stack trace, device model,
+          operating system and app version. Your identity, IP address and fitness data
+          are not sent (see 3.4).</td>
+      <td>Seeing and fixing errors in the app</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="not">
+  <p>Photos are sent to Gemini only for the scan you request, after permission.
+  <a href="https://ai.google.dev/gemini-api/terms#paid-services">Google's paid-service terms</a>
+  explain processing and temporary safety retention.</p>
+</div>
+
+<h3>4.1 Visiting this website</h3>
+<p>The public support and policy website is hosted on GitHub Pages. GitHub records
+visitor IP addresses for security, including visits made without a GitHub account.
+This website has no sign-in, payment form or analytics scripts. Read the
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.
+These website visits are separate from the data processed by the mobile app.</p>
+
+<h2>5. Deleting your data</h2>
+
+<h3>From the app</h3>
+<p>Go to <strong>Profile → Delete Account</strong>. This permanently deletes all of:</p>
+<ul>
+  <li>Your Firebase account (email and password)</li>
+  <li>All of your workout, nutrition, measurement and water logs in the cloud</li>
+  <li>The local copy on this device</li>
+</ul>
+<p>This cannot be undone and deleted data cannot be recovered.</p>
+
+<p>To delete only the copy on this device and keep your account, use
+<strong>Profile → Clear data on this device</strong>.</p>
+
+<h3>If you deleted the app</h3>
+<p>If you no longer have access to the app, email us from your account's address; your
+account and all your data will be deleted within 30 days. Steps:</p>
+<p><a class="dugme" href="/macro-gym-site/delete-account/">Account Deletion Request</a></p>
+<p>Deleting your account or the app does not cancel an App Store/Google Play
+  subscription; manage it separately through your store account. The app requests
+  deletion of your RevenueCat customer before deleting the Firebase account.
+  RevenueCat processes deletion asynchronously. Daily security counters and a temporary
+  deletion marker are removed within 48 hours. Stores and payment providers may retain
+  transaction records where required by law. Contact support for requests outside the app.</p>
+
+<h2>6. Data retention</h2>
+<p>Data is kept until you delete it. Removing the app from your phone does not delete
+your cloud data — follow the steps above to delete it.</p>
+
+<h2>7. Children's privacy</h2>
+<p>Macro Gym is not intended for children under 13 and does not knowingly collect data
+from this age group; setup does not accept a birth year under 13.</p>
+
+<h2>8. Health disclaimer</h2>
+<p>Calorie, macro and workout recommendations in the app are for general information
+only and are not medical advice. If you have a health condition, talk to your doctor
+before changing your diet or training.</p>
+
+<h2>9. Your rights</h2>
+<p>Under GDPR and Turkish KVKK you have the right to access, correct, delete and port
+your data. All of your data is already visible and editable in the app; for deletion
+see section 5. For other requests, write to
+<a href="mailto:volumsport@gmail.com">volumsport@gmail.com</a>.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the “Last updated” date above is updated and significant
+changes are announced in the app.</p>
+
+<footer>
+  <span>Macro Gym · Atakan Ünal</span>
+  <span><a href="/macro-gym-site/delete-account/">Delete account</a> · <a href="/macro-gym-site/">Support</a></span>
+</footer>
+
+</div>
+</body>
+</html>
