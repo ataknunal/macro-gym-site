@@ -22,17 +22,16 @@
 </header>
 
 <h1>Gizlilik Politikası</h1>
-<div class="tarih">Son güncelleme: 4 Ekim 2026</div>
+<div class="tarih">Son güncelleme: 13 Ekim 2026</div>
 
 <div class="kart">
   <div class="baslik">Özet</div>
   <p>Macro Gym (eski adı Volüm) yerel-öncelikli çalışır: verilerinin asıl kopyası senin telefonunda durur.
   Temel takip özellikleri hesapsız çalışır. Besin arama ve barkod sorguları ürün veri
-  hizmetlerine bağlanır; fotoğraf taraması ve Plus satın alma için giriş gerekir.
+  hizmetlerine bağlanır; fotoğraf taraması ve abonelik satın alma için giriş gerekir.
   Veriler <strong>satılmaz</strong>, reklam amacıyla kullanılmaz;
   uygulamada reklam ağı veya reklam amacıyla takip SDK'sı yoktur.
-  Uygulama yalnızca <strong>bir hata oluştuğunda</strong> isimsiz bir hata raporu
-  gönderir (bkz. 3.4); bunun dışında davranışın izlenmez.</p>
+  Mevcut sürümde Sentry hata bildirimi ve oturum takibi kapalıdır (bkz. 3.4).</p>
 </div>
 
 <h2>1. Kim veri topluyor</h2>
@@ -63,7 +62,13 @@ de kullanılır.</p>
   <li>Antrenman kayıtların: hareketler, setler, ağırlıklar, tekrarlar, süreler</li>
   <li>Beslenme kayıtların: yenen besinler, kalori, makro besinler, gıda harcaması</li>
   <li>Su tüketimi ve antrenman serisi (streak) bilgisi</li>
+  <li>Supplement planları, kullanım günleri, hedef miktarlar ve alım kayıtları</li>
 </ul>
+<p>Supplement planları ve alımları, diğer spor kayıtları gibi cihazda ve hesapla
+kullanımda yalnızca hesabına açık Firebase alanında saklanır. İsteğe bağlı akşam
+hatırlatmaları yerel telefon bildirimidir. Bildirim tercihi bu cihazda kalır;
+bir bildirim servisine push token veya supplement bilgisi gönderilmez. Kilit ekranı
+mesajı supplement adlarını içermez. Plan ve alımlar hesap verilerini silme kapsamındadır.</p>
 
 <h3>3.3 Fotoğraflar</h3>
 <p><strong>Program görselleri:</strong> Galeriden yüklediğin antrenman programı,
@@ -96,26 +101,7 @@ Besin fotoğrafları için aşağıda açıklanan ücretli API veri koşulları 
 </ul>
 
 <h3>3.4 Hata raporları</h3>
-<p>Uygulamada beklenmedik bir hata çıktığında, hatayı düzeltebilmemiz için
-teknik bir rapor Sentry servisine gönderilir. Rapor <strong>yalnızca hata
-anında</strong> oluşur; uygulamayı normal kullanırken hiçbir şey gönderilmez.</p>
-<p><strong>Raporun içinde şunlar var:</strong></p>
-<ul>
-  <li>Hatanın mesajı ve teknik yığın izi (kodun hangi satırında kırıldığı)</li>
-  <li>Cihaz modeli, işletim sistemi sürümü ve uygulama sürümü</li>
-</ul>
-<p><strong>Raporun içinde şunlar YOKTUR:</strong></p>
-<ul>
-  <li>Adın, e-postan ya da hesap kimliğin — rapor sana
-      bağlanamaz</li>
-  <li>IP adresin</li>
-  <li>Kilo, ölçü, antrenman, öğün ve harcama verilerinin hiçbiri</li>
-  <li>Ekran görüntüsü ya da ekran kaydı — bu özellikler kapalıdır</li>
-  <li>Hangi ekranları gezdiğin, ne zaman ve kaç kez uygulamayı açtığın</li>
-</ul>
-<p>Bu, bir analitik ya da kullanıcı takip sistemi değildir: kaç kişi olduğumuzu,
-kimin ne yaptığını ya da uygulamanın ne sıklıkla açıldığını ölçmüyoruz.
-Toplanan tek şey, bozulan bir şeyi tamir etmeye yetecek kadar teknik bilgi.</p>
+<p>Mevcut sürümde Sentry hata bildirimi kapalıdır. Sentry’ye uygulama hata raporu, ekran kaydı veya oturum takibi gönderilmez. Güvenlik ve kötüye kullanım önleme için sunucuda tutulan teknik günlükler ve ağ adresi sayaçları bu kapalı uygulama telemetrisinden ayrıdır.</p>
 
 <h2>4. Verilerin paylaşıldığı üçüncü taraflar</h2>
 <div class="tablo-kutu">
@@ -138,7 +124,9 @@ Toplanan tek şey, bozulan bir şeyi tamir etmeye yetecek kadar teknik bilgi.</p
       <td>Fotoğrafı Google'a iletmek, günlük kullanım hakkını saymak ve bütçe
           planı için güncel market fiyatlarını dağıtmak. Fotoğraf saklanmaz;
           hesap kimliği, günlük kullanım, ilk tarama zamanı, günlük kötüye kullanım
-          kontrolü için ağ adresi ve doğrulanmış üyelik bitişi tutulur.</td>
+          kontrolü için ağ adresi, doğrulanmış üyelik seviyesi/bitişi ve program
+          tarama kullanımı tutulur. Plus'ın tek seferlik program kullanım kaydı
+          hesap boyunca korunur; hesabı silmek bu kaydı da siler.</td>
     </tr>
     <tr>
       <td>Google Gemini API</td>
@@ -160,13 +148,7 @@ Toplanan tek şey, bozulan bir şeyi tamir etmeye yetecek kadar teknik bilgi.</p
       <td>Yalnızca okuttuğun barkod numarası ve market ürünlerinde aradığın kelimeler</td>
       <td>Ürünün besin değerlerini getirmek</td>
     </tr>
-    <tr>
-      <td>Sentry</td>
-      <td>Yalnızca bir hata oluştuğunda: hata mesajı, teknik yığın izi, cihaz
-          modeli, işletim sistemi ve uygulama sürümü. Kimliğin, IP adresin ve
-          fitness verilerin gönderilmez (bkz. 3.4).</td>
-      <td>Uygulamadaki hataları görüp düzeltmek</td>
-    </tr>
+
   </tbody>
 </table>
 </div>
@@ -216,8 +198,7 @@ verilerin 30 gün içinde silinir. Adımlar için:</p>
 verini silmez — silmek için yukarıdaki adımları izlemen gerekir.</p>
 
 <h2>7. Çocukların gizliliği</h2>
-<p>Macro Gym 13 yaşın altındaki çocuklara yönelik değildir ve bilerek bu yaş grubundan
-veri toplamaz; kurulumda 13 yaşından küçük bir doğum yılı kabul edilmez.</p>
+<p>Macro Gym yalnızca 18 yaş ve üstü yetişkinlere yöneliktir. Uygulama kullanımından önce doğum tarihi ve açık 18+ yaş beyanı istenir. Tam doğum tarihi yaş hesabı için geçici işlenir, saklanmaz ve Gemini’ye gönderilmez. Cihazda doğum yılı ile beyan kaydı; sunucuda hesap kimliğine bağlı beyan sürümü, 18+ kabulü ve kabul zamanı tutulur. Sunucu beyansız fotoğraf analizi isteklerini reddeder. Bu kontroller kullanıcı beyanına dayanır; kimlik veya doğrulanmış yaş hizmeti değildir. Hesap silme ve destek yolları açık kalır.</p>
 
 <h2>8. Sağlık uyarısı</h2>
 <p>Uygulamadaki kalori, makro ve antrenman önerileri genel bilgilendirme amaçlıdır,

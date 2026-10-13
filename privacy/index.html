@@ -22,17 +22,16 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<div class="tarih">Last updated: October 4, 2026</div>
+<div class="tarih">Last updated: October 13, 2026</div>
 
 <div class="kart">
   <div class="baslik">Summary</div>
   <p>Macro Gym (formerly Volüm) is local-first: the primary copy of your data lives on
   your phone. Core tracking works without an account. Food search and barcode queries
-  connect to product data services; photo scanning and Plus purchases require sign-in.
+  connect to product data services; photo scanning and subscription purchases require sign-in.
   Your data is <strong>never sold</strong> and never used for
   advertising; the app contains no ad networks or advertising
-  tracking SDKs. The app only sends an anonymous crash report <strong>when an error
-  occurs</strong> (see 3.4); otherwise your behavior is not tracked.</p>
+  tracking SDKs. Sentry error reporting and session tracking are disabled in the current release.</p>
 </div>
 
 <h2>1. Who collects data</h2>
@@ -64,7 +63,13 @@ verify photo allowances and membership access.</p>
   <li>Workout logs: exercises, sets, weights, reps, durations</li>
   <li>Nutrition logs: foods eaten, calories, macronutrients and, in Türkiye, food spending</li>
   <li>Water intake and workout streak</li>
+  <li>Supplement plans, selected days, target amounts and intake entries</li>
 </ul>
+<p>Supplement plans and intake entries use the same local and, when signed in, private
+Firebase storage as other fitness records. Evening reminders are optional local phone
+notifications. Reminder preferences stay on this device; no push token or supplement
+details are sent to a notification service. Lock screen messages do not name supplements.
+Plans and intake entries are included in account data deletion.</p>
 
 <h3>3.3 Photos</h3>
 <p><strong>Workout images:</strong> A workout plan selected from your gallery is
@@ -94,25 +99,7 @@ The paid API data terms explained below for meal photos also apply.</p>
 </ul>
 
 <h3>3.4 Crash reports</h3>
-<p>When an unexpected error occurs, a technical report is sent to Sentry so we can fix
-it. A report is created <strong>only when an error happens</strong>; nothing is sent
-during normal use.</p>
-<p><strong>A report contains:</strong></p>
-<ul>
-  <li>The error message and technical stack trace (where in the code it broke)</li>
-  <li>Device model, operating system version and app version</li>
-</ul>
-<p><strong>A report does NOT contain:</strong></p>
-<ul>
-  <li>Your name, email or account ID — the report cannot be linked to you</li>
-  <li>Your IP address</li>
-  <li>Any of your weight, measurement, workout, meal or spending data</li>
-  <li>Screenshots or screen recordings — these features are turned off</li>
-  <li>Which screens you visit, or when and how often you open the app</li>
-</ul>
-<p>This is not an analytics or user tracking system: we don't measure how many of you
-there are, who does what, or how often the app is opened. The only thing collected is
-enough technical detail to fix something that broke.</p>
+<p>Sentry error reporting is disabled in the current release. No app error reports, screen recordings or session tracking are sent to Sentry. Server-side technical logs and network-address counters used for security and abuse prevention are separate from this disabled app telemetry.</p>
 
 <h2>4. Third parties that receive data</h2>
 <div class="tablo-kutu">
@@ -135,7 +122,9 @@ enough technical detail to fix something that broke.</p>
       <td>Forwarding the photo to Google, counting your daily usage and distributing
           current grocery prices for the budget plan. Photos are not stored; only your
           account ID, daily usage, first scan time, network address for daily abuse
-          checks and verified membership expiry are kept.</td>
+          checks, verified membership level/expiry and program scan usage are kept.
+          The one-time Plus program usage record is retained for the account;
+          deleting your account also deletes this record.</td>
     </tr>
     <tr>
       <td>Google Gemini API</td>
@@ -159,13 +148,7 @@ enough technical detail to fix something that broke.</p>
           products</td>
       <td>Fetching the product's nutrition facts</td>
     </tr>
-    <tr>
-      <td>Sentry</td>
-      <td>Only when an error occurs: error message, stack trace, device model,
-          operating system and app version. Your identity, IP address and fitness data
-          are not sent (see 3.4).</td>
-      <td>Seeing and fixing errors in the app</td>
-    </tr>
+
   </tbody>
 </table>
 </div>
@@ -212,8 +195,7 @@ account and all your data will be deleted within 30 days. Steps:</p>
 your cloud data — follow the steps above to delete it.</p>
 
 <h2>7. Children's privacy</h2>
-<p>Macro Gym is not intended for children under 13 and does not knowingly collect data
-from this age group; setup does not accept a birth year under 13.</p>
+<p>Macro Gym is intended only for adults aged 18 and over. Before using the app, users provide a date of birth and an explicit 18+ age declaration. The full date is processed temporarily to calculate age, is not stored, and is not sent to Gemini. The device stores the birth year and declaration; the server stores the declaration version, adult acceptance and acceptance time linked to the account ID. The server rejects photo analysis without a declaration. These checks rely on user-declared information and are not identity or verified-age checks. Account deletion and support remain accessible.</p>
 
 <h2>8. Health disclaimer</h2>
 <p>Calorie, macro and workout recommendations in the app are for general information
