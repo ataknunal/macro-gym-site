@@ -22,7 +22,7 @@
 </header>
 
 <h1>Gizlilik Politikası</h1>
-<div class="tarih">Son güncelleme: 4 Kasım 2026</div>
+<div class="tarih">Son güncelleme: 15 Kasım 2026</div>
 
 <div class="kart">
   <div class="baslik">Özet</div>
@@ -52,6 +52,11 @@ de kullanılır.</p>
 <ul>
   <li>Giriş için e-posta adresin ve şifren. Şifre kimlik bilgilerini Google Firebase
       Authentication yönetir; Macro Gym şifrenin ayrı bir kopyasını saklamaz.</li>
+  <li>Bunun yerine <strong>Google</strong> ya da <strong>Apple</strong> ile giriş yaparsan:
+      o sağlayıcının bizimle paylaştığı ad ve e-posta adresi ile sağlayıcının verdiği hesap
+      kimliği. Google ya da Apple şifren bize hiçbir zaman gelmez. Apple'ın “E-postamı Gizle”
+      seçeneğinde gerçek adresin değil, yalnızca Apple'ın özel aktarma adresi bize ulaşır.
+      Kişilerine, takvimine, dosyalarına ya da başka bir Google/Apple verine erişmeyiz.</li>
   <li>Görünen adın.</li>
 </ul>
 
@@ -137,6 +142,13 @@ Besin fotoğrafları için aşağıda açıklanan ücretli API veri koşulları 
       <td>Hesap yönetimi ve bulut yedeği</td>
     </tr>
     <tr>
+      <td>Google ile Giriş ve Apple ile Giriş<br>(yalnızca seçersen)</td>
+      <td>Giriş isteğinin kendisi. Google ya da Apple kimliğini doğrular; adını, e-posta
+          adresini (ya da Apple'ın aktarma adresini) ve bir giriş jetonunu döndürür.
+          Giriş sırasında onlara antrenman, beslenme ya da sağlık verisi gönderilmez.</td>
+      <td>Şifresiz giriş yapabilmen</td>
+    </tr>
+    <tr>
       <td>Cloudflare<br>(aracı sunucu)</td>
       <td>“Fotoğraftan tara” ile çektiğin besin fotoğrafı ve hesap kimliğin,
           isteği iletirken. Bütçe özelliği açıksa uygulama ayrıca en fazla günde
@@ -194,7 +206,9 @@ Web sitesi ziyaretleri, mobil uygulamada işlenen verilerden ayrıdır.</p>
 <p><strong>Profil → Hesabı Sil</strong> yolunu izle. Bu işlem şunların tamamını kalıcı
 olarak siler:</p>
 <ul>
-  <li>Firebase hesabın (e-posta ve şifren)</li>
+  <li>Firebase hesabın (e-posta ve şifren ya da Google/Apple giriş bağlantın). Apple ile
+      Giriş'te uygulama Apple giriş jetonunu da iptal eder; Macro Gym, Apple Kimliğinin
+      “Apple ile Giriş” listesinden kalkar.</li>
   <li>Buluttaki tüm antrenman, beslenme, ölçüm ve su kayıtların</li>
   <li>Bu cihazdaki yerel kopyan</li>
 </ul>

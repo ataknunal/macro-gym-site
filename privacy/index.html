@@ -22,7 +22,7 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<div class="tarih">Last updated: November 4, 2026</div>
+<div class="tarih">Last updated: November 15, 2026</div>
 
 <div class="kart">
   <div class="baslik">Summary</div>
@@ -53,6 +53,11 @@ verify photo allowances and membership access.</p>
 <ul>
   <li>Your email address and password for sign-in. Google Firebase Authentication
       manages password credentials; Macro Gym does not keep a separate password copy.</li>
+  <li>If you sign in with <strong>Google</strong> or <strong>Apple</strong> instead: the
+      name and email address that provider shares with us and an account identifier
+      from the provider. We never receive your Google or Apple password. With Apple's
+      “Hide My Email”, we receive only Apple's private relay address, not your real one.
+      We do not access your contacts, calendar, files or any other Google or Apple data.</li>
   <li>Your display name.</li>
 </ul>
 
@@ -135,6 +140,13 @@ The paid API data terms explained below for meal photos also apply.</p>
       <td>Account management and cloud backup</td>
     </tr>
     <tr>
+      <td>Google Sign-In and Sign in with Apple<br>(only if you choose them)</td>
+      <td>The sign-in request itself. Google or Apple confirms your identity and returns
+          your name, email address (or Apple's relay address) and a sign-in token.
+          No workout, nutrition or health data is sent to them through sign-in.</td>
+      <td>Signing you in without a password</td>
+    </tr>
+    <tr>
       <td>Cloudflare<br>(relay server)</td>
       <td>The meal photo you take with “Scan from photo” and your account ID, while
           forwarding the request. If the budget feature is on, the app also downloads
@@ -191,7 +203,9 @@ These website visits are separate from the data processed by the mobile app.</p>
 <h3>From the app</h3>
 <p>Go to <strong>Profile → Delete Account</strong>. This permanently deletes all of:</p>
 <ul>
-  <li>Your Firebase account (email and password)</li>
+  <li>Your Firebase account (email and password, or the link to your Google or Apple
+      sign-in). For Sign in with Apple, the app also revokes its Apple sign-in token, so
+      Macro Gym is removed from your Apple ID's “Sign in with Apple” list.</li>
   <li>All of your workout, nutrition, measurement and water logs in the cloud</li>
   <li>The local copy on this device</li>
 </ul>
@@ -201,7 +215,8 @@ These website visits are separate from the data processed by the mobile app.</p>
 <strong>Profile → Clear data on this device</strong>.</p>
 
 <h3>If you deleted the app</h3>
-<p>If you no longer have access to the app, email us from your account's address; your
+<p>If you no longer have access to the app, email us from your account's address (if you used
+Apple's “Hide My Email”, see the steps below); your
 account and all your data will be deleted within 30 days. Steps:</p>
 <p><a class="dugme" href="/macro-gym-site/delete-account/">Account Deletion Request</a></p>
 <p>Deleting your account or the app does not cancel an App Store/Google Play
